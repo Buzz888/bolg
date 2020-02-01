@@ -1,0 +1,46 @@
+* {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-size: 14px;
+}
+.flex {
+  display: flex;
+}
+.d-flex{
+    flex: 1;
+}
+$jc: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  sb: space-between,
+  sa: space-around
+);
+$ai: (
+  start: flex-start,
+  end: flex-end,
+  center: center
+);
+@each $val, $key in $jc {
+  .jc-#{$val} {
+    justify-content: $key;
+  }
+}
+@each $val, $key in $ai {
+  .ai-#{$val} {
+    align-items: $key;
+  }
+}
+.slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .2s ease;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
